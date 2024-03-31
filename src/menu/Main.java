@@ -1,3 +1,4 @@
+package menu;
 // Main class for the DroneCLI program
 /*
  * public class DroneCLI { // Private variables for menu items private String[]

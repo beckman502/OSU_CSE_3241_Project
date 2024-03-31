@@ -1,4 +1,4 @@
-
+package menu;
 /**
  * This class represents a menu option: Text Description Execute Option
  *

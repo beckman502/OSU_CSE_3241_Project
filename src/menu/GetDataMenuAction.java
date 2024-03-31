@@ -1,4 +1,4 @@
-
+package menu;
 
 public class GetDataMenuAction extends ActionMenuItem {
 
@@ -8,12 +8,6 @@ public class GetDataMenuAction extends ActionMenuItem {
 
     @Override
     public void execute(ActionMenuItem callingAction) {
-        for (int i = 0; i < FakeDataStore.DataList1.size(); i++) {
-            System.out.println(FakeDataStore.DataList1.get(i));
-        }
-
-        if (callingAction != null) {
-            callingAction.execute(null);
-        }
+        this.goBack(callingAction);
     }
 }
