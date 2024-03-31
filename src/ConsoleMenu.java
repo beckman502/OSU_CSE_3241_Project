@@ -4,7 +4,7 @@ import java.util.Scanner;
 /**
  * This is a Console Menu Object.
  *
- * @author happy
+ * @author William Comer
  *
  */
 public class ConsoleMenu extends ActionMenuItem {
@@ -75,6 +75,27 @@ public class ConsoleMenu extends ActionMenuItem {
      * @param args
      */
     public static void main(String[] args) {
+
+        /*
+         * Create some fake people.
+         */
+
+        FakeDataStore.CommunityMemberTable.add(new CommunityMemberEntity(1,
+                "William", "Comer", "293 East 17th", "513-252-3433",
+                "comer.157@osu.edu", "Active", "05-12-15", 12));
+        FakeDataStore.CommunityMemberTable.add(new CommunityMemberEntity(12,
+                "Veer", "Hsk", "143 17th", "523-215-2133", "veer.157@osu.edu",
+                "Active", "11-22-15", 2));
+        FakeDataStore.CommunityMemberTable.add(new CommunityMemberEntity(6,
+                "Audrey", "Blackshire", "59 59th Ave", "215-133-5468",
+                "audrey@osu.edu", "Active", "12-12-12", 25));
+        FakeDataStore.CommunityMemberTable.add(new CommunityMemberEntity(2,
+                "Billy", "Jean", "250 W Norwich Ave", "513-252-0003",
+                "boo.boo@boo.com", "Inactive", "05-12-24", 9));
+        FakeDataStore.CommunityMemberTable.add(new CommunityMemberEntity(156135,
+                "Jimmy", "Comer", "Buckeye Palace", "513-231-3433",
+                "testing.out@buckeyes.com", "Active", "05-21-15", 156));
+
         ConsoleMenu menu = new ConsoleMenu("Main Menu");
         //sub menus:
         ConsoleMenu peopleMenu = new ConsoleMenu("People");
