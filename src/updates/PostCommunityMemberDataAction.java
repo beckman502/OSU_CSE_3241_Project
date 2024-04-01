@@ -33,24 +33,31 @@ public class PostCommunityMemberDataAction extends PostDataMenuAction {
             id = Integer.parseInt(this.stdin.nextLine());
             ppSPeople.setInt(1, id);
             ppSCommunityMembers.setInt(1, id);
-
-            System.out.println("Please enter a first name:");
-            firstName = this.stdin.nextLine();
-            ppSPeople.setString(2, firstName);
-            System.out.println("Please enter a last name:");
-            lastName = this.stdin.nextLine();
-            System.out.println("Please enter an address:");
-            address = this.stdin.nextLine();
-            System.out.println("Please enter a phone number:");
-            phoneNumber = this.stdin.nextLine();
             System.out.println("Please enter an email: ");
             email = this.stdin.nextLine();
+            ppSPeople.setString(2, email);
+            System.out.println("Please enter a first name:");
+            firstName = this.stdin.nextLine();
+            ppSPeople.setString(3, firstName);
+            System.out.println("Please enter a last name:");
+            lastName = this.stdin.nextLine();
+            ppSPeople.setString(4, lastName);
+            System.out.println("Please enter an address:");
+            address = this.stdin.nextLine();
+            ppSPeople.setString(5, address);
+            System.out.println("Please enter a phone number:");
+            phoneNumber = this.stdin.nextLine();
+            ppSPeople.setString(6, phoneNumber);
+
             System.out.println("Please enter a status: ");
             status = this.stdin.nextLine();
+            ppSCommunityMembers.setString(2, status);
             System.out.println("Please enter a join date: ");
             joinDate = this.stdin.nextLine();
+            ppSCommunityMembers.setString(3, joinDate);
             System.out.println("Please enter a distance from the warehouse: ");
             warehouseDistance = this.stdin.nextInt();
+            ppSCommunityMembers.setInt(4, warehouseDistance);
         } catch (SQLException e) {
             // TODO Auto-generated catch block
             e.printStackTrace();
