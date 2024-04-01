@@ -1,7 +1,7 @@
 package menu;
 
 public abstract class ActionMenuItem {
-    protected static SQL sqlHandler = new SQL("DroneCompany");
+    protected static SQL sqlHandler = new SQL("DroneCompany.db");
 
     public String textDescription;
 

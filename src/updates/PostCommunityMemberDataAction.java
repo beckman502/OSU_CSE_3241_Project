@@ -58,6 +58,12 @@ public class PostCommunityMemberDataAction extends PostDataMenuAction {
             System.out.println("Please enter a distance from the warehouse: ");
             warehouseDistance = this.stdin.nextInt();
             ppSCommunityMembers.setInt(4, warehouseDistance);
+//            ActionMenuItem.sqlHandler.sqlQuery(ppSPeople);
+//            ActionMenuItem.sqlHandler.sqlQuery(ppSCommunityMembers);
+            if (ppSPeople.executeUpdate() < 0
+                    || ppSCommunityMembers.executeUpdate() < 0) {
+                System.out.println("Uh oh, that didn't work quiet right :(");
+            }
         } catch (SQLException e) {
             // TODO Auto-generated catch block
             e.printStackTrace();
