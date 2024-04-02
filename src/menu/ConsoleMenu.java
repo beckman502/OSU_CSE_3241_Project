@@ -1,11 +1,12 @@
 package menu;
 
-import java.util.ArrayList;
-import java.util.Scanner;
-
-import selects.GetCommunityMembersDataAction;
+import selects.*;
 import updates.PostCommunityMemberDataAction;
 import updates.PostDataMenuAction;
+
+import java.util.ArrayList;
+import java.util.Scanner;
+import java.sql.Connection;
 
 /**
  * This is a Console Menu Object.
@@ -91,6 +92,36 @@ public class ConsoleMenu extends ActionMenuItem {
                 "Deactivate Person");
         ActionMenuItem viewPeople = new GetCommunityMembersDataAction(
                 "View Person");
+
+        // Incomplete changes start
+
+        ActionMenuItem rentingCheckouts = new RentingCheckoutsReport(
+                "Find equipment for a given user");
+
+        ActionMenuItem getPopularItemReport = new GetPopularItemReport(
+                "See the most popular items today");
+
+        ActionMenuItem popularManufacturer = new GetMostPopularManufacturer (
+                "Find most popular equipment manufacturer");
+
+        ActionMenuItem popularDrone = new GetMostPopularDrone(
+                "See the most used drone");
+
+        ActionMenuItem itemsCheckedOut = new ActionMenuItem(
+                "Find member with most rentals",
+                () -> MostCheckedOutItems(connection)  // Pass the connection to the function
+        );
+
+        ActionMenuItem equipmentByType = new ActionMenuItem(
+                "Find equipment by type (optional year)",
+                () -> equipmentByTypeReport(connection, null, null)  // Call with null for optional parameters initially
+        );
+
+        // Incomplete changes end here
+
+
+
+
 
         peopleMenu.addMenuItem(registerPeople);
         peopleMenu.addMenuItem(deactivatePeople);
